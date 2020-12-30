@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=640, initial-scale=1"/>
+<title>My Web Page</title>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    body{
+        background: #333;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+    
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+</style>
+
+</head>
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+<div class="row">
+    <div class="column">
+        <p>iPhone Camera</p>
+        <img style="-webkit-user-select: none;margin: auto;" src="http://192.168.1.28:8000/video" width="640" height="360">
+    </div>
+    <div class="column">
+        <p>Pi camera</p>
+        <img src="http://192.168.1.13:8000/stream.mjpg" width="640" height="480">
+    </div>
+    <div class="column">
+        <p>webcam</p>
+        <video id="myVidPlayer" controls muted autoplay></video>
+    </div>
+</div> 
+
+<script type="text/javascript">
+    //Selector for your <video> element
+    const video = document.querySelector('#myVidPlayer');
+
+    //Core
+    window.navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            video.onloadedmetadata = (e) => {
+                video.play();
+            };
+        })
+        .catch( () => {
+            alert('You have give browser the permission to run Webcam and mic ;( ');
+        });
+
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Part of Code is from 'DanmuPlayer (//github.com/chiruom/danmuplayer/) - Licensed under the MIT license'. Thanks! -->
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <style>
+    body{
+      left: 50%; 
+      margin-left: -640px; 
+      width: 1280px; 
+      margin:auto;
+      background: #333;
+    }
+</style>
+  <title>LearningBridge Demo Video</title>
+  <link href="../src/css/scojs.css" rel="stylesheet">
+  <link href="../src/css/colpick.css" rel="stylesheet">
+  <link href="../src/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/css/main.css">
+  <!--<link rel="stylesheet" href="../dist/css/danmuplayer.css">-->
+</head>
+<body>
+    <h1 style="color:white;text-align:center">ECE209 LearningBridge Demo Video</h1>
+  <h2 style="color:white;text-align:center">Siyuan Peng, Siyou Pei, Yifei Tang (special thanks to Alexander Chen)</h2>
+  
+  <div id="danmup" style="left: 50%;margin-left:-640px">
+   </div>
+   <h2 style="color:white;text-align:center">Thanks for being here. Thanks to investors. Any comment is welcome!</h2>
+
+
+
+</body>
+<script src="../src/js/jquery-2.1.4.min.js"></script>
+<script src="../src/js/jquery.shCircleLoader.js"></script>
+<script src="../src/js/sco.tooltip.js"></script>
+<script src="../src/js/colpick.js"></script>
+<script src="../src/js/jquery.danmu.js"></script>
+<script src="../src/js/main.js"></script>
+<!--<script src="../dist/js/danmuplayer.min.js"></script>-->
+<script>
+	//"danmu" means "bullet live comments" in Chinese
+  $("#danmup").DanmuPlayer({//in main.js
+    src:"finaldemo2.mp4",
+    height: "720px", //height of comment area
+    width: "1280px" //width of comment area
+    ,urlToGetDanmu:"" //fetch comments
+    ,urlToPostDanmu:"" //insert/send comments to server/sql
+  });
+
+  $("#danmup .danmu-div").danmu("addDanmu",[
+    { "text":"a scrolling comment :p" ,color:"white",size:1,position:0,time:2}
+    //,{ "text":"Wow u even made a video!" ,color:"green",size:1,position:0,time:3}
+     ,{ "text":"cool" ,color:"black",size:1,position:0,time:10}
+    // ,{ "text":"a top comment" ,color:"yellow" ,size:1,position:1,time:3}
+    // ,{ "text":"a bottom comment" , color:"red" ,size:1,position:2,time:9}
+    // ,{ "text":"I cannot sit like you!" ,color:"orange",size:1,position:1,time:5}
+
+  ])
+</script>
+</html>

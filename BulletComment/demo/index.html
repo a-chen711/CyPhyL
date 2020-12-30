@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Cyber-physical Learning: Bullet Comments System</title>
+  <link href="../src/css/scojs.css" rel="stylesheet">
+  <link href="../src/css/colpick.css" rel="stylesheet">
+  <link href="../src/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/css/main.css">
+  <!--<link rel="stylesheet" href="../dist/css/danmuplayer.css">-->
+</head>
+<body>
+<div id="danmup" style="left: 50%;margin-left:-400px;top:100px">
+</div>
+
+
+</body>
+<script src="../src/js/jquery-2.1.4.min.js"></script>
+<script src="../src/js/jquery.shCircleLoader.js"></script>
+<script src="../src/js/sco.tooltip.js"></script>
+<script src="../src/js/colpick.js"></script>
+<script src="../src/js/jquery.danmu.js"></script>
+<script src="../src/js/main.js"></script>
+<!--<script src="../dist/js/danmuplayer.min.js"></script>-->
+<script>
+	//"danmu" means "bullet live comments" in Chinese
+  $("#danmup").DanmuPlayer({//in main.js
+    src:"demo_video.mp4",
+    height: "480px", //height of comment area
+    width: "800px" //width of comment area
+    ,urlToGetDanmu:"query.php" //fetch comments
+    ,urlToPostDanmu:"stone.php" //insert/send comments to server/sql
+  });
+
+  $("#danmup .danmu-div").danmu("addDanmu",[
+    { "text":"a scrolling comment" ,color:"white",size:1,position:0,time:2}
+    ,{ "text":"I am GREEN" ,color:"green",size:1,position:0,time:3}
+    ,{ "text":"I cannot do this" ,color:"black",size:1,position:0,time:10}
+    ,{ "text":"a top comment" ,color:"yellow" ,size:1,position:1,time:3}
+    ,{ "text":"a bottom comment" , color:"red" ,size:1,position:2,time:9}
+    ,{ "text":"I cannot sit like you!" ,color:"orange",size:1,position:1,time:3}
+
+  ])
+</script>
+</html>
